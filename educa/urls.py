@@ -13,6 +13,7 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
+from courses.views import CourseListView
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
@@ -22,4 +23,5 @@ urlpatterns = [
     url(r'^accounts/logout/$', auth_views.logout, name='logout'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^course/', include('courses.urls')),
+    url(r'^$', CourseListView.as_view(), name='course_list'),
 ]
