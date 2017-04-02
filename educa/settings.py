@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from django.core.urlresolvers import reverse_lazy
+
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,6 +28,8 @@ SECRET_KEY = 'z-+l9&_*l*xhud%ruvnqr9nv33x_^&m7imoyy4$ud+k%=-r0bj'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+LOGIN_REDIRECT_URL = reverse_lazy('student_course_list')
 
 
 # Application definition
