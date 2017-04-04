@@ -31,6 +31,11 @@ ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = reverse_lazy('student_course_list')
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 # Application definition
 
@@ -39,6 +44,7 @@ INSTALLED_APPS = (
     'students',
     'embed_video',
     'memcache_status',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
